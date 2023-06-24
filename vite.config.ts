@@ -4,7 +4,6 @@ import path from 'path'
 import { UserConfigExport, ConfigEnv } from 'vite'
 import { viteMockServe } from 'vite-plugin-mock'
 
-
 // 引入svg
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 // https://vitejs.dev/config/
@@ -15,15 +14,16 @@ export default defineConfig(({ command }) => {
       createSvgIconsPlugin({
         iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
         symbolId: 'icon-[dir]-[name]',
-      }), 
+      }),
       viteMockServe({
         // default
-        localEnabled: command === 'serve'
-      })],
+        localEnabled: command === 'serve',
+      }),
+    ],
     resolve: {
       alias: {
-        '@': path.resolve('./src')
-      }
+        '@': path.resolve('./src'),
+      },
     },
     css: {
       preprocessorOptions: {
@@ -32,6 +32,6 @@ export default defineConfig(({ command }) => {
           additionalData: '@import "./src/styles/variable.scss";',
         },
       },
-    }
+    },
   }
 })

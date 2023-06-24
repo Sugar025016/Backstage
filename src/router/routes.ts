@@ -64,7 +64,7 @@ export const constantRoute = [
       title: '任意路由',
       hidden: true,
     },
-  }
+  },
 ]
 
 // export const asyncRoute = [
