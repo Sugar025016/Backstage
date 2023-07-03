@@ -10,7 +10,7 @@ import { onMounted, ref } from 'vue'
 import useCategoryStore from '@/store/modules/category'
 
 let categoryStore = useCategoryStore()
-console.log("categoryStore",categoryStore)
+console.log('categoryStore', categoryStore)
 onMounted(() => {
   getC1()
 })

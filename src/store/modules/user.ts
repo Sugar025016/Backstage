@@ -54,9 +54,9 @@ let useUserStore = defineStore('User', {
         // this.token = res.data as string
         // 持久化
         SET_TOKEN(res.data as string)
-        console.log("res")
+        console.log('res')
         console.log(res)
-        this.token=GET_TOKEN()
+        this.token = GET_TOKEN()
         return 'ok'
       } else {
         return Promise.reject(new Error(res.data as string))
@@ -65,18 +65,18 @@ let useUserStore = defineStore('User', {
     async userInfo() {
       let res: userInfoResponseData = await reqUserInfo()
 
-      await console.log("token")
+      await console.log('token')
       // await console.log(token)
       if (res.code === 200) {
         await console.log(res.data)
         this.username = res.data.name as string
         this.avatar = res.data.avatar as string
 
-        console.log("res.data")
+        console.log('res.data')
         console.log(res.data)
-        console.log("res.data.name")
+        console.log('res.data.name')
         console.log(res.data.name)
-        console.log("this.name")
+        console.log('this.name')
         console.log(this.username)
         let userAsyncRoute = filterAsyncRoute(
           cloneDeep(asyncRoute),

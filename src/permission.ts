@@ -16,17 +16,17 @@ nprogress.configure({ showSpinner: false })
 let userStore = useUserStore(pinia)
 // 全局前置守卫
 router.beforeEach(async (to, from, next) => {
-  console.log("beforeEach:")
+  console.log('beforeEach:')
   document.title = to.meta.title + ` | ${setting.title}`
   nprogress.start()
   let token = userStore.token
   let username = userStore.username
-  console.log("username:"+username)
+  console.log('username:' + username)
   if (token) {
     if (to.path === '/login') {
       next({ path: '/' })
     } else {
-      console.log("username:"+username)
+      console.log('username:' + username)
       if (username) {
         next()
       } else {

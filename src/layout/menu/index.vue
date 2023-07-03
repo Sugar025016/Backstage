@@ -24,7 +24,6 @@
       <el-menu-item
         v-if="!item.children[0].meta.hidden"
         :index="item.children[0].path"
-        
       >
         <el-icon>
           <component :is="item.children[0].meta.icon"></component>
@@ -51,7 +50,7 @@
   </template>
 </template>
 <script setup lang="ts" name="Menu">
-let props=defineProps(['menuList'])
+let props = defineProps(['menuList'])
 // console.log(props.menuList)
 // import { useRouter } from 'vue-router'
 // let $router = useRouter()
@@ -60,9 +59,9 @@ let props=defineProps(['menuList'])
 //   $router.push(vc.index)
 // }
 </script>
-<script  lang="ts" >
-export default { 
-  name:'Menu'
-  }
+<script lang="ts">
+export default {
+  name: 'Menu',
+}
 </script>
 <style lang="scss" scoped></style>

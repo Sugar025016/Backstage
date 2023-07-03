@@ -146,12 +146,12 @@ const login = async () => {
   loading.value = true
   try {
     await useStore.userLogin(loginForm)
-    console.log("---------------------")
+    console.log('---------------------')
     console.log(useStore.token)
-  //   nextTick(() => {
-  //     useStore.userInfo()
-  // })
-    
+    //   nextTick(() => {
+    //     useStore.userInfo()
+    // })
+
     let redirect: string = $route.query.redirect as string
     $router.push({ path: redirect || '/' })
     // $router.push('/')

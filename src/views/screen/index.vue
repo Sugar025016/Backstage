@@ -65,7 +65,7 @@ var sum = () => {
   screen.value.style.transform = `scale(${getScale()}) translate(-50%,-50%)`
 }
 
-console.log("sum")
+console.log('sum')
 console.log(sum)
 </script>
 
@@ -83,7 +83,7 @@ console.log(sum)
     left: 50%;
     top: 50%;
     transform-origin: left top;
-    translate:translate(-50%,-50%);
+    translate: translate(-50%, -50%);
     .top {
       width: 100%;
       height: 40px;

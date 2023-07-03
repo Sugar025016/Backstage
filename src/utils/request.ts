@@ -20,14 +20,13 @@ request.interceptors.request.use(
     let userStore = useUserStore()
 
     // SET_TOKEN("123"as string)
-    console.log("userStore.token")
+    console.log('userStore.token')
     console.log(userStore.token)
     console.log(GET_TOKEN())
     console.log(userStore.token)
     console.log(userStore.token)
     if (userStore.token) {
       config.headers.token = userStore.token
-      
     }
 
     return config

@@ -72,7 +72,7 @@ const setColor = () => {
   <el-button circle size="small" :icon="FullScreen" @click="fullScreen" />
   <el-popover placement="bottom" title="主题设置" :width="200" trigger="hover">
     <el-form>
-      <el-form-item label="主题颜色" >
+      <el-form-item label="主题颜色">
         <el-color-picker
           v-model="color"
           show-alpha

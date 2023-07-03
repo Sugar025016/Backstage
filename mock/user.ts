@@ -52,7 +52,7 @@ export default [
       }
       //如果有返回成功信息
       const { token } = checkUser
-      
+
       return { code: 200, data: { token } }
     },
   },
@@ -63,11 +63,11 @@ export default [
     response: (request) => {
       // console.log(request.headers.token)
       //获取请求头携带token
-      const token  = request.headers.token
-      const cookie  = request.headers.cookie
-    //   for(var property in request.headers) {
-    //     console.log(property + "=" + request.headers[property]);
-    // }
+      const token = request.headers.token
+      const cookie = request.headers.cookie
+      //   for(var property in request.headers) {
+      //     console.log(property + "=" + request.headers[property]);
+      // }
       //查看用户信息是否包含有次token用户
       // console.log(request.headers.Token)
       // const checkUser = createUserList().find((item) =>{
@@ -75,7 +75,7 @@ export default [
       //   if(item.token === "Admin Token"){
       //     console.log('item.token:' , item.token)
       //     return item={...item}
-      //   } 
+      //   }
 
       // } )
 
@@ -84,9 +84,9 @@ export default [
       if (!checkUser) {
         return { code: 201, data: { message: '获取用户信息失败' } }
       }
-      console.log("checkUser",checkUser)
+      console.log('checkUser', checkUser)
       //如果有返回成功信息
-      return { code: 200, data:  checkUser  }
+      return { code: 200, data: checkUser }
     },
   },
 ]
