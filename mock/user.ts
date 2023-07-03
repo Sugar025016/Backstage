@@ -52,6 +52,7 @@ export default [
       }
       //如果有返回成功信息
       const { token } = checkUser
+      
       return { code: 200, data: { token } }
     },
   },
@@ -60,16 +61,32 @@ export default [
     url: '/api/user/info',
     method: 'get',
     response: (request) => {
+      // console.log(request.headers.token)
       //获取请求头携带token
-      const token = request.headers.token
+      const token  = request.headers.token
+      const cookie  = request.headers.cookie
+    //   for(var property in request.headers) {
+    //     console.log(property + "=" + request.headers[property]);
+    // }
       //查看用户信息是否包含有次token用户
+      // console.log(request.headers.Token)
+      // const checkUser = createUserList().find((item) =>{
+      //   console.log("0000000",item.token)
+      //   if(item.token === "Admin Token"){
+      //     console.log('item.token:' , item.token)
+      //     return item={...item}
+      //   } 
+
+      // } )
+
       const checkUser = createUserList().find((item) => item.token === token)
       //没有返回失败的信息
       if (!checkUser) {
         return { code: 201, data: { message: '获取用户信息失败' } }
       }
+      console.log("checkUser",checkUser)
       //如果有返回成功信息
-      return { code: 200, data: { checkUser } }
+      return { code: 200, data:  checkUser  }
     },
   },
 ]

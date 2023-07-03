@@ -46,7 +46,8 @@ import Counter from './components/counter/index.vue'
 //获取数据大屏展示内容盒子的DOM元素
 let screen = ref()
 onMounted(() => {
-  screen.value.style.transform = `scale(${getScale()}) translate(-50%,-50%)`
+  sum()
+  // screen.value.style.transform = `scale(${getScale()}) translate(-50%,-50%)`
 })
 //定义大屏缩放比例
 function getScale(w = 1920, h = 1080) {
@@ -56,8 +57,16 @@ function getScale(w = 1920, h = 1080) {
 }
 //监听视口变化
 window.onresize = () => {
+  sum()
+  // screen.value.style.transform = `scale(${getScale()}) translate(-50%,-50%)`
+}
+
+var sum = () => {
   screen.value.style.transform = `scale(${getScale()}) translate(-50%,-50%)`
 }
+
+console.log("sum")
+console.log(sum)
 </script>
 
 <style scoped lang="scss">
@@ -74,7 +83,7 @@ window.onresize = () => {
     left: 50%;
     top: 50%;
     transform-origin: left top;
-
+    translate:translate(-50%,-50%);
     .top {
       width: 100%;
       height: 40px;
@@ -87,7 +96,7 @@ window.onresize = () => {
         flex: 1;
         display: flex;
         flex-direction: column;
-        margin-left: 40px;
+        // margin-left: 40px;
 
         .rank {
           flex: 1.5;

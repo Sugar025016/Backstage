@@ -19,6 +19,7 @@ import type {
   TradeMarkResponseData,
 } from '@/api/product/trademark/type'
 import { UploadProps } from 'element-plus/es/components/upload/src/upload'
+import { ElMessage } from 'element-plus'
 
 let pageNo = ref<number>(1)
 

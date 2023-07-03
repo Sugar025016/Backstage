@@ -11,6 +11,7 @@ let categoryStore = useCategoryStore()
 import { watch, ref, reactive, nextTick, onBeforeUnmount } from 'vue'
 import { reqAttr, reqAddOrUpdateAttr, reqRemoveAttr } from '@/api/product/attr'
 import type { AttrResponseData, Attr, AttrValue } from '@/api/product/attr/type'
+import { ElMessage } from 'element-plus'
 let attrArr = ref<Attr[]>([])
 let scene = ref<number>(0)
 let flag = ref<boolean>(true)

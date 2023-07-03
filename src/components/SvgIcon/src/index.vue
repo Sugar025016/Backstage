@@ -5,11 +5,6 @@
  * @LastEditors: Huccct
  * @LastEditTime: 2023-05-17 20:09:32
 -->
-<template>
-  <svg :style="{ width, height }">
-    <use :xlink:href="prefix + name" :fill="color"></use>
-  </svg>
-</template>
 <script setup lang="ts">
 defineProps({
   prefix: {
@@ -31,4 +26,9 @@ defineProps({
   },
 })
 </script>
+<template>
+  <svg :style="{ width, height }">
+    <use :xlink:href="prefix + name" :fill="color"></use>
+  </svg>
+</template>
 <style lang="scss" scoped></style>

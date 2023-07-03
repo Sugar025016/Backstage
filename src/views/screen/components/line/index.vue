@@ -54,7 +54,7 @@ onMounted(() => {
       },
     },
     grid: {
-      left: 40,
+      left: 60,
       top: 0,
       right: 20,
       bottom: 20,
@@ -63,7 +63,7 @@ onMounted(() => {
     series: [
       {
         type: 'line',
-        data: [120, 1240, 66, 2299, 321, 890, 1200],
+        data: [120, 1240, 66, 2299, 321, 890, 1200, 890, 1200],
         //平滑曲线的设置
         smooth: true,
         //区域填充样式
@@ -99,6 +99,7 @@ onMounted(() => {
   height: 100%;
   background: url(../../images/dataScreen-main-cb.png) no-repeat;
   background-size: 100% 100%;
+  width: calc(100% - 40px);
   margin: 0px 20px;
 
   .title {

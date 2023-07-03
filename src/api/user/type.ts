@@ -9,6 +9,7 @@
 export interface LoginFormData {
   username?: string
   password?: string
+  verifyCode?: string
 }
 
 export interface ResponseData {

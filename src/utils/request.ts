@@ -8,7 +8,8 @@
 // 二次封装axios
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
-// import useUserStore from '@/store/modules/user'
+import useUserStore from '@/store/modules/user'
+import { SET_TOKEN, GET_TOKEN, REMOVE_TOKEN } from '@/utils/token'
 const request = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API,
   timeout: 5000,
@@ -16,11 +17,18 @@ const request = axios.create({
 
 request.interceptors.request.use(
   (config) => {
-    // let userStore = useUserStore()
+    let userStore = useUserStore()
 
-    // if (userStore.token) {
-    //   config.headers.token = userStore.token
-    // }
+    // SET_TOKEN("123"as string)
+    console.log("userStore.token")
+    console.log(userStore.token)
+    console.log(GET_TOKEN())
+    console.log(userStore.token)
+    console.log(userStore.token)
+    if (userStore.token) {
+      config.headers.token = userStore.token
+      
+    }
 
     return config
   },
